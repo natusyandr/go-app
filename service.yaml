@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nat-go-app-service
+  namespace: nat-go-app
+  labels:
+    app: hello-world
+spec:
+  selector:
+    app: hello-world
+  ports:
+  - port: 44
+    targetPort: 4444
+    protocol: TCP
+  type: ClusterIP
